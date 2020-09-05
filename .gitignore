@@ -2,3 +2,4 @@
 /simplesocial/settings.py
 /accounts/migrations/
 /.idea/
+/posts/migrations/

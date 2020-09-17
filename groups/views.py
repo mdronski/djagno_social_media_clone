@@ -8,9 +8,9 @@ from django.views.generic import CreateView, DetailView, ListView, RedirectView
 from groups.models import Group, GroupMember
 
 
-class CreateGroupView(LoginRequiredMixin, CreateView):
+class CreateGroup(LoginRequiredMixin, CreateView):
     model = Group
-    fields = ['name', 'description']
+    fields = ('name', 'description')
 
 
 class SingleGroup(DetailView):

@@ -1,4 +1,5 @@
 from braces.views import SelectRelatedMixin
+from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
@@ -39,7 +40,7 @@ class PostDetail(SelectRelatedMixin, DetailView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        return queryset.filter(user__username__ieaxct=self.kwargs.get('username'))
+        return queryset.filter(user__username__iexact=self.kwargs.get('username'))
 
 
 class CreatePost(LoginRequiredMixin, SelectRelatedMixin, CreateView):

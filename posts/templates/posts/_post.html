@@ -1,8 +1,8 @@
 <div class="post media">
-    <h3>{{ post.message_html|safe }}</h3>
-    <div class="card-body">
+    <div class="card-header">
+        <h3>{{ post.message_html|safe|wordwrap:10 }}</h3>
         <strong>{{ post.user.username }}</strong>
-        <h5 class="card-header">
+        <h5 class="card-body">
             <span class="username">
                 <a href="{% url 'posts:for_user' username=post.user.username %}"></a>
             </span>
